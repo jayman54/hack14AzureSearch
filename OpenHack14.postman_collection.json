@@ -1,0 +1,126 @@
+{
+	"variables": [],
+	"info": {
+		"name": "OpenHack14",
+		"_postman_id": "9011c310-bd08-05ad-b0dd-5397feda3c48",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://qnafaq-aslv4rot7gumsy4.search.windows.net/indexes/margiestravelsearchindex/docs/search?api-version=2019-05-06&$count=true",
+			"request": {
+				"url": {
+					"raw": "https://qnafaq-aslv4rot7gumsy4.search.windows.net/indexes/margiestravelsearchindex/docs/search?api-version=2019-05-06&$count=true",
+					"protocol": "https",
+					"host": [
+						"qnafaq-aslv4rot7gumsy4",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"margiestravelsearchindex",
+						"docs",
+						"search"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2019-05-06",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "$count",
+							"value": "true",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "api-key",
+						"value": "B08826F08F7F9A7C4B26F2D315FFFDD3",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n      \"select\":\"last_modified, urls, myKeyPhrases, mySentiment, locations\",\n      \"filter\": \"urls/any()\",\n      \"count\":true,\n      \"queryType\": \"full\", \n      \"searchMode\": \"all\"                    \n }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "https://qnafaq-aslv4rot7gumsy4.search.windows.net/indexes/margiestravelsearchindex/docs/suggest?api-version=2019-05-06&$count=true",
+			"request": {
+				"url": {
+					"raw": "https://qnafaq-aslv4rot7gumsy4.search.windows.net/indexes/margiestravelsearchindex/docs/suggest?api-version=2019-05-06&$count=true",
+					"protocol": "https",
+					"host": [
+						"qnafaq-aslv4rot7gumsy4",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"margiestravelsearchindex",
+						"docs",
+						"suggest"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2019-05-06",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "$count",
+							"value": "true",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "B08826F08F7F9A7C4B26F2D315FFFDD3",
+						"description": ""
+					},
+					{
+						"key": "content",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \r\n     \r\n      \"fuzzy\": \"false\",  \r\n      \"highlightPreTag\": \"pre_tag\",  \r\n      \"highlightPostTag\": \"post_tag\",  \r\n      \"minimumCoverage\": 80,  \r\n      \"search\": \"Uni\",  \r\n      \"searchFields\": \"locations\",  \r\n      \"select\": \"locations\",  \r\n      \"suggesterName\": \"suggester\",  \r\n      \"top\": 5  \r\n    }"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
